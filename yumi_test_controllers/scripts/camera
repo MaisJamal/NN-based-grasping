@@ -1,0 +1,45 @@
+to start processing info from camera:
+
+
+roslaunch yumi_launch yumi_gazebo_traj_pos_control.launch
+
+
+
+
+roslaunch realsense_gazebo_plugin depth_proc.launch
+
+
+
+rostopic list
+/camera/color/camera_info
+/camera/color/image_raw
+/camera/color/image_raw/compressed
+/camera/color/image_raw/compressed/parameter_descriptions
+/camera/color/image_raw/compressed/parameter_updates
+/camera/color/image_raw/compressedDepth
+/camera/color/image_raw/compressedDepth/parameter_descriptions
+/camera/color/image_raw/compressedDepth/parameter_updates
+/camera/color/image_raw/theora
+/camera/color/image_raw/theora/parameter_descriptions
+/camera/color/image_raw/theora/parameter_updates
+/camera/depth/camera_info
+/camera/depth/image_raw
+/camera/depth/image_rect
+/camera/depth/image_rect/compressed
+/camera/depth/image_rect/compressed/parameter_descriptions
+/camera/depth/image_rect/compressed/parameter_updates
+/camera/depth/image_rect/compressedDepth
+/camera/depth/image_rect/compressedDepth/parameter_descriptions
+/camera/depth/image_rect/compressedDepth/parameter_updates
+/camera/depth/image_rect/theora
+/camera/depth/image_rect/theora/parameter_descriptions
+/camera/depth/image_rect/theora/parameter_updates
+/camera/depth/points
+/camera/depth_registered/points
+/camera_ir/parameter_descriptions
+/camera_ir/parameter_updates
+
+
+to convert pointcloud to pcd and save it 
+rosrun pcl_ros pointcloud_to_pcd input:=/camera/depth/points
+and it is gonna be saved in catkin_ws

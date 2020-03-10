@@ -1,0 +1,20 @@
+ROS / Gazebo based simulation
+
+IRB 14000 YuMi control project, to grasp novel objects depending on neural network model to find the grasping
+position with the highest quality of grasping.
+
+Simulation is done in gazebo, simulation includes the robot, kinect depth camera and the object.
+
+The package includes the inverse kinematics of YuMi robot.
+
+- After pulling and building the project, use the following command to start YuMi control and simulation: 
+
+$ roslaunch yumi_launch yumi_gazebo_traj_pos_control.launch
+
+- To start planning excution with moveit, use:
+
+$ roslaunch yumi_moveit_config demo_planning_excution.launch
+
+- An example of controlling the robot to reach a desired position is included in python script in yumi_test_controllers/scripts/:
+
+$ rosrun yumi_test_controllers test_moveit.py
